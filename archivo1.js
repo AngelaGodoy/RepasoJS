@@ -1,9 +1,38 @@
-/* CONDICIONALES IF */
+/* ARRAY, CICLO FOR, WHILE, DO WHILE, SWITCH*/
 
-var numero = 10;
+var arreglo = [1, 2, 3, 'hola', false];
 
-if (numero > 5) {
-    console.log('La condición es verdadera ('+ numero +' es mayor que 5)');
-} else {
-    console.log('La condicion es falsa (5 NO es mayor que '+ numero +')');
+console.log(arreglo);
+console.log(arreglo[2]);
+
+for (var i = 0; i <= 4; i++) {
+    console.log(arreglo[i]);
+}
+
+i = 0;
+while (i <= 4) {
+    console.log(arreglo[i]);
+    i++;
+}
+
+i = 0;
+do {
+    console.log(arreglo[i]);
+    i++;
+} while (i <= 4);
+
+var opcion = 3;
+switch (opcion) {
+    case 1:
+        console.log('hola');
+    break;
+    case 2:
+        console.log('hello');
+    break;
+    case 3:
+        console.log('bona tarde');
+    break;
+    default:
+        console.log('no hay saludo');
+    break;
 }
