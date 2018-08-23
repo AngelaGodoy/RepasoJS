@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 7</title>
+    <script>
+        //Crear un formulario y Validarlo con JS.
+        function revisar(elemento) {
+			if (elemento.value == "") {
+				elemento.className = "error";
+			} else {
+				elemento.className = "";
+			}
+		}
+        function validarBoton() {
+	        var nombre = document.getElementById('nombre').value;
+            var correo = document.getElementById('correo').value;
+            var cedula = document.getElementById('cedula').value;
+            var mensaje = document.getElementById('mensaje').value;
+            if (nombre == "" || correo == "" || cedula == "" || mensaje == "") {
+                alert('engrese datos en el formulario.');
+            }
+        }
+    </script> 
+    <style>
+        body {
+            background: black;
+            text-align: center;
+        }
+        input, textarea {
+            padding: 10px;
+            margin: 10px;
+            background: black;
+            color: rgb(44, 255, 97);
+            font-size: 20px;
+            border-radius: 2px;
+            border: 1px rgb(44, 255, 97) solid;
+        }
+        input[type="submit"] {
+            width: 90px;
+            background: black;
+            color: rgb(44, 255, 97);
+            font-size: 20px;
+            border: 1px rgb(44, 255, 97) solid;
+            border-radius: 2px;
+            padding: 5px;
+            margin-top: 20px;
+        }
+        input[type="submit"]:hover {
+            background:  rgb(44, 255, 97);
+            color: black;
+        }
+        form {
+            margin-top: 50px;
+        }
+        .error {
+			background-color: rgba(255, 0, 0, .5);
+			border: #FF0000 1px solid;
+		}
+    </style>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="nombre" placeholder="Nombre" onblur="revisar(this)" onkeyup="revisar(this)">
+        <input type="email" id="correo" placeholder="Correo" onblur="revisar(this)" onkeyup="revisar(this)">
+        <input type="cedula" id="cedula" placeholder="Cedula" onblur="revisar(this)" onkeyup="revisar(this)">
+        <textarea id="mensaje" cols="30" rows="10" placeholder="deje un mensaje" onblur="revisar(this)" onkeyup="revisar(this)"></textarea> <br>
+        <input type="submit" value="Enviar" onclick="validarBoton()" onmouseover="validarBoton()">
+    </form>
+</body>
+</html>

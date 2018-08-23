@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet"> 
+    <title>Ejercicio 4</title>
+    <script>
+        //Crear un Cronometro
+        var horas = 0;
+        var minutos = 0;
+        var segundos = 0;
+        var mili = 0;
+        var cronometro;
+        function cuenta() {
+            if (mili == 1000) {
+                mili = 0;
+            if (segundos == 60) {
+                segundos = 0;
+                minutos++;
+                document.getElementById('minutos').innerHTML = minutos;
+                if (minutos == 60) {
+                    minutos = 0;
+                    horas++;
+                    document.getElementById('horas').innerHTML = horas;
+                }
+            }
+            segundos++;
+            document.getElementById('segundos').innerHTML = segundos;
+            
+            }
+            document.getElementById('mili').innerHTML = mili;
+            mili++;
+        }
+        function inicio() {
+            cronometro = setInterval('cuenta()', 1);
+        }
+        function pausa() {
+            clearInterval(cronometro);
+        }
+        function reset() {
+            horas = 0;
+            minutos = 0;
+            segundos = 0;
+            mili = 0;
+            document.getElementById('minutos').innerHTML = minutos;
+            document.getElementById('horas').innerHTML = horas;
+            document.getElementById('segundos').innerHTML = segundos;
+            document.getElementById('mili').innerHTML = mili;
+        }
+        
+    </script>
+    <style>
+        body {
+            background: black;
+        }
+        div {
+            padding: 10px;
+            color: rgb(44, 255, 97);
+            font-size: 50px;
+            font-family: 'Audiowide', cursive;
+        }
+        table {
+            margin: auto;
+        }
+        td {
+            text-align: center;
+            width: 150px;
+        }
+        input {
+            background:  rgb(44, 255, 97);
+            color: black;
+            border: none;
+            width: 150px;
+            height: 50px;
+            font-size: 20px;
+        }
+        input:hover {
+            background: black;
+            color: rgb(44, 255, 97);
+            border: 1px rgb(44, 255, 97) solid;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td id="horas">0</td>
+                <td> : </td>
+                <td id="minutos">0</td>
+                <td> : </td>
+                <td id="segundos">0</td>
+                <td> : </td>
+                <td id="mili">0</td>
+            </tr>
+        </table>
+        <div style="margin-left: 30%;">
+            <input type="button" value="Iniciar" onclick="inicio()">
+            <input type="button" value="Pausa" onclick="pausa()">
+            <input type="button" value="Reiniciar" onclick="reset()">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,5 +1,5 @@
 /* ARRAY, CICLO FOR, WHILE, DO WHILE, SWITCH*/
-
+//https://youtu.be/Zwcqq-7IDI0?t=2131
 var arreglo = [1, 2, 3, 'hola', false];
 
 console.log(arreglo);
