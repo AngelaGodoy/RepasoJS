@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 2</title>
+    <script>
+        //Realiza una página implemente una calculadora aritmética. Para ello haz uso de una tabla y un formulario.
+        function agregar(numero) {
+            var valor = document.getElementById('operacion').value;
+            document.getElementById('operacion').value = valor + numero;
+        }
+        function resultado() {
+            var valor = document.getElementById('operacion').value;
+            if (valor) {
+                document.getElementById('operacion').value = eval(valor);
+            }
+        }
+        function limpiar() {
+            document.getElementById('operacion').value = '';
+        }
+    </script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            background: black;
+        }
+        .input-text {
+            width: 90%;
+            margin: 10px;
+            padding: 5px;
+            font-size: 20px;
+        }
+        input[type="button"] {
+            width: 90px;
+            background: black;
+            color: rgb(44, 255, 97);
+            font-size: 20px;
+            border: 1px rgb(44, 255, 97) solid;
+            border-radius: 2px;
+            padding: 5px;
+            margin: 1px;
+        }
+        input[type="button"]:hover {
+            background:  rgb(44, 255, 97);
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <table style="text-align:center; margin: auto; margin-top: 20px;">
+        <tr>
+            <td colspan="4">
+                <input type="text" class="input-text" id="operacion">
+            </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="agregar(1)"></td>
+            <td><input type="button" value="2" onclick="agregar(2)"></td>
+            <td><input type="button" value="3" onclick="agregar(3)"></td>
+            <td><input type="button" value="+" onclick="agregar('+')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="agregar(4)"></td>
+            <td><input type="button" value="5" onclick="agregar(5)"></td>
+            <td><input type="button" value="6" onclick="agregar(6)"></td>
+            <td><input type="button" value="-" onclick="agregar('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="agregar(7)"></td>
+            <td><input type="button" value="8" onclick="agregar(8)"></td>
+            <td><input type="button" value="9" onclick="agregar(9)"></td>
+            <td><input type="button" value="/" onclick="agregar('/')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0" onclick="agregar(0)"></td>
+            <td><input type="button" value="C" onclick="limpiar()"></td>
+            <td><input type="button" value="=" onclick="resultado()"></td>
+            <td><input type="button" value="*" onclick="agregar('*')"></td>
+        </tr>
+    </table>
+</body>
+</html>
